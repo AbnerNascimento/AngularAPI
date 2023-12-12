@@ -1,0 +1,17 @@
+<section class="bg-slate-700 p-4">
+  <div class="flex flex-wrap gap-5">
+    <ng-container *ngFor="let deputado of deputados">
+      <div class="bg-white rounded-md p-4">
+        <img
+          [src]="deputado.urlFoto"
+          alt="{{ deputado.nome }}"
+          class="w-40 h-50 object-cover mb-4"
+        />
+        <p class="font-bold text-lg">{{ deputado.nome }}</p>
+        <p class="text-sm text-gray-600">
+          {{ deputado.siglaPartido }}-{{ deputado.siglaUf }}
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</section>

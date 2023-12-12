@@ -1,0 +1,46 @@
+<section class="bg-slate-400 p-2 flex justify-center items-center">
+  <div
+    class="mb-4 p-4 font-bold text-lg flex justify-center items-center gap-5"
+  >
+    <label for="pesquisa1" class="">Nome</label>
+    <input type="text" id="pesquisa1" #nome class="bg-white rounded-md p-2" />
+  </div>
+  <div
+    class="mb-4 p-4 font-bold text-lg flex justify-center items-center gap-5"
+  >
+    <label for="pesquisa2" class="">Partido</label>
+    <input
+      type="text"
+      id="pesquisa2"
+      #partido
+      class="bg-white rounded-md p-2"
+    />
+  </div>
+  <div class="my-auto">
+    <button
+      (click)="pesquisa(nome.value, partido.value)"
+      class="bg-blue-500 ml-5 mb-4 px-4 py-2 rounded-md"
+    >
+      Pesquisar
+    </button>
+  </div>
+</section>
+<section class="bg-slate-400 p-2 flex justify-center items-center">
+  <div
+    class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+  >
+    <ul *ngFor="let deputado of deputados" class="bg-white rounded-md p-4">
+      <li>
+        <img
+          [src]="deputado.urlFoto"
+          alt="{{ deputado.nome }}"
+          class="w-full h-50 object-cover mb-4 rounded-md"
+        />
+      </li>
+      <li class="font-bold text-lg">{{ deputado.nome }}</li>
+      <li class="text-sm text-gray-600">
+        {{ deputado.siglaPartido }}-{{ deputado.siglaUf }}
+      </li>
+    </ul>
+  </div>
+</section>
